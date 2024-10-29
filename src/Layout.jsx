@@ -1,6 +1,8 @@
 import { AppShell, Burger } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
+
+import { HeaderSimple } from "./components/HeaderSimple";
 import Nav from "./components/Nav";
 
 function Layout() {
@@ -16,8 +18,7 @@ function Layout() {
       padding="md"
     >
       <AppShell.Header>
-        <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-        <div>PHB 63 - Flashcards</div>
+        <HeaderSimple opened={opened} toggle={toggle} />
       </AppShell.Header>
 
       <AppShell.Navbar p="md">
