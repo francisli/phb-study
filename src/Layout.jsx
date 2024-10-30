@@ -3,7 +3,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
 
 import { HeaderSimple } from "./components/HeaderSimple";
-import Nav from "./components/Nav";
+import { NavbarSimple } from "./components/NavbarSimple";
 
 function Layout() {
   const [opened, { toggle }] = useDisclosure();
@@ -22,7 +22,7 @@ function Layout() {
       </AppShell.Header>
 
       <AppShell.Navbar p="md">
-        <Nav />
+        <NavbarSimple />
       </AppShell.Navbar>
 
       <AppShell.Main>
