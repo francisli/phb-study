@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Container, Stack, Text, Title } from "@mantine/core";
 
 const STATE_INTRO = 0;
@@ -8,13 +8,22 @@ const STATE_END = 2;
 const QUIZ_STATE_HIDDEN = 0;
 const QUIZ_STATE_HINT = 1;
 
-function Quiz({ title, states }) {
+function Quiz({ title, filename }) {
+  const [states, setStates] = useState([]);
   const [state, setState] = useState(STATE_INTRO);
   const [index, setIndex] = useState(0);
   const [subindex, setSubindex] = useState(0);
   const [quizState, setQuizState] = useState(QUIZ_STATE_HIDDEN);
   const [startTime, setStartTime] = useState();
   const [endTime, setEndTime] = useState();
+
+  useEffect(() => {
+    if (filename) {
+      fetch(`/data/${filename}`)
+        .then((response) => response.json())
+        .then((data) => setStates(data));
+    }
+  }, [filename]);
 
   function start() {
     setIndex(0);
@@ -29,7 +38,7 @@ function Quiz({ title, states }) {
   }
 
   const contents = states[index];
-  const lines = contents.split("\n");
+  const lines = contents?.split("\n");
 
   function showAnswer() {
     let newSubindex;
@@ -38,7 +47,7 @@ function Quiz({ title, states }) {
       newSubindex <= lines.length;
       newSubindex += 1
     ) {
-      if (lines[newSubindex]?.trim() !== "") {
+      if (lines?.[newSubindex]?.trim() !== "") {
         break;
       }
     }
@@ -68,7 +77,11 @@ function Quiz({ title, states }) {
     return text.substring(0, 1) + ht;
   }
 
-  const style = { position: "sticky", bottom: "2rem" };
+  const style = {
+    position: "sticky",
+    bottom: "2rem",
+    backgroundColor: "white",
+  };
 
   return (
     <Container size="xs">
@@ -82,7 +95,7 @@ function Quiz({ title, states }) {
         <>
           <Text style={{ textWrap: "wrap" }} component="pre" mb="5rem" w="100%">
             {lines
-              .map((line, i) => {
+              ?.map((line, i) => {
                 if (i < subindex) {
                   return line;
                 } else if (i === subindex) {
@@ -106,10 +119,10 @@ function Quiz({ title, states }) {
             >
               Show Hint
             </Button>
-            {subindex < lines.length && (
+            {subindex < lines?.length && (
               <Button onClick={showAnswer}>Show Answer</Button>
             )}
-            {subindex >= lines.length && <Button onClick={next}>Next</Button>}
+            {subindex >= lines?.length && <Button onClick={next}>Next</Button>}
           </Stack>
         </>
       )}

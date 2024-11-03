@@ -1,25 +1,19 @@
 import { NavLink } from "react-router-dom";
 
 import classes from "./NavbarSimple.module.css";
-
-const data = [
-  {
-    link: "/patient-assessment-medical",
-    label: "Patient Assessment - Medical",
-  },
-];
+import routes from "../routes.json";
 
 export function NavbarSimple({ onClick }) {
-  const links = data.map((item) => (
+  const links = routes.map((r) => (
     <NavLink
       className={({ isActive }) =>
         `${classes.link} ${isActive ? classes["link--active"] : ""}`
       }
-      to={item.link}
-      key={item.link}
+      to={r.path}
+      key={r.path}
       onClick={() => onClick?.()}
     >
-      <span>{item.label}</span>
+      <span>{r.title}</span>
     </NavLink>
   ));
 

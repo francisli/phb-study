@@ -7,17 +7,19 @@ import { MantineProvider } from "@mantine/core";
 
 import Layout from "./Layout.jsx";
 import Home from "./routes/Home.jsx";
-import AssessmentMedical from "./routes/AssessmentMedical.jsx";
+import Quiz from "./components/Quiz.jsx";
+
+import routes from "./routes.json";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-      {
-        path: "patient-assessment-medical",
-        element: <AssessmentMedical />,
-      },
+      ...routes.map((r) => ({
+        path: r.path,
+        element: <Quiz title={r.title} filename={r.filename} />,
+      })),
       {
         path: "",
         element: <Home />,
