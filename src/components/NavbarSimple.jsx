@@ -9,7 +9,7 @@ const data = [
   },
 ];
 
-export function NavbarSimple() {
+export function NavbarSimple({ onClick }) {
   const links = data.map((item) => (
     <NavLink
       className={({ isActive }) =>
@@ -17,6 +17,7 @@ export function NavbarSimple() {
       }
       to={item.link}
       key={item.link}
+      onClick={() => onClick?.()}
     >
       <span>{item.label}</span>
     </NavLink>

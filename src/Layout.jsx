@@ -22,7 +22,7 @@ function Layout() {
       </AppShell.Header>
 
       <AppShell.Navbar p="md">
-        <NavbarSimple />
+        <NavbarSimple onClick={() => toggle()} />
       </AppShell.Navbar>
 
       <AppShell.Main>
