@@ -26,7 +26,9 @@ const router = createBrowserRouter([
       },
     ],
   },
-]);
+], {
+  basename: '/phb-study'
+});
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

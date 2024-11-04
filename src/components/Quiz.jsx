@@ -19,7 +19,7 @@ function Quiz({ title, filename }) {
 
   useEffect(() => {
     if (filename) {
-      fetch(`/data/${filename}`)
+      fetch(`/phb-study/data/${filename}`)
         .then((response) => response.json())
         .then((data) => setStates(data));
     }
