@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
@@ -11,7 +11,7 @@ import Quiz from "./components/Quiz.jsx";
 
 import routes from "./routes.json";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Layout />,
@@ -26,9 +26,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-], {
-  basename: '/phb-study'
-});
+]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
