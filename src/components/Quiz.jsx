@@ -9,7 +9,7 @@ const QUIZ_STATE_HIDDEN = 0;
 const QUIZ_STATE_HINT = 1;
 
 function Quiz({ title, filename }) {
-  const [states, setStates] = useState([]);
+  const [data, setData] = useState([]);
   const [state, setState] = useState(STATE_INTRO);
   const [index, setIndex] = useState(0);
   const [subindex, setSubindex] = useState(0);
@@ -18,10 +18,15 @@ function Quiz({ title, filename }) {
   const [endTime, setEndTime] = useState();
 
   useEffect(() => {
+    setState(STATE_INTRO);
+    setIndex(0);
+    setSubindex(0);
+    setQuizState(QUIZ_STATE_HIDDEN);
+
     if (filename) {
       fetch(`/phb-study/data/${filename}`)
         .then((response) => response.json())
-        .then((data) => setStates(data));
+        .then((newData) => setData(newData));
     }
   }, [filename]);
 
@@ -37,7 +42,7 @@ function Quiz({ title, filename }) {
     setQuizState(QUIZ_STATE_HINT);
   }
 
-  const contents = states[index];
+  const contents = data[index];
   const lines = contents?.split("\n");
 
   function showAnswer() {
@@ -59,7 +64,7 @@ function Quiz({ title, filename }) {
     setQuizState(QUIZ_STATE_HIDDEN);
     // advance index, reset subindex
     const newIndex = index + 1;
-    if (newIndex >= states.length) {
+    if (newIndex >= data.length) {
       setState(STATE_END);
       setEndTime(new Date());
     } else {

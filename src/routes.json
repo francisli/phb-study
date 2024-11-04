@@ -3,5 +3,45 @@
     "title": "Full Patient Assessment - Medical - Pain",
     "path": "/patient-assessment-medical",
     "filename": "AssessmentMedical.json"
+  },
+  {
+    "title": "Abdominal Assessment",
+    "path": "/abdominal-assessment",
+    "filename": "AbdominalAssessment.json"
+  },
+  {
+    "title": "Altered Mental Status Assessment",
+    "path": "/altered-assessment",
+    "filename": "AlteredAssessment.json"
+  },
+  {
+    "title": "Alert & Oriented Assessment",
+    "path": "/alert-oriented-assessment",
+    "filename": "/AoAssessment.json"
+  },
+  {
+    "title": "Level of Consiousness Scale",
+    "path": "/level-of-consciousness",
+    "filename": "/LocAssessment.json"
+  },
+  {
+    "title": "Pain Assessment",
+    "path": "/pain-assessment",
+    "filename": "PainAssessment.json"
+  },
+  {
+    "title": "Respiratory Assessment",
+    "path": "/respiratory-assessment",
+    "filename": "RespiratoryAssessment.json"
+  },
+  {
+    "title": "Stroke Assessment",
+    "path": "/stroke-assessment",
+    "filename": "StrokeAssessment.json"
+  },
+  {
+    "title": "Trauma Assessment",
+    "path": "/trauma-assessment",
+    "filename": "TraumaAssessment.json"
   }
 ]

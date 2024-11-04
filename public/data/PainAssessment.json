@@ -1,0 +1,8 @@
+[
+  "OPQRST\n\nO: Onset\nWhat were you doing when the pain started?",
+  "P: Provocation\nDoes anything make the pain better or worse?",
+  "Q: Quality\nCan you describe the pain to me in your own words?",
+  "R: Radiation\nCan you point to where it hurts? Does it move?",
+  "S: Severity\nCan you rate the pain on a scale of 1 - 10?",
+  "T: Time\nHow long have you been feeling this pain?"
+]

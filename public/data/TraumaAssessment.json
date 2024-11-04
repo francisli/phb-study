@@ -1,0 +1,15 @@
+[
+  "DCAPBTLSIC\n\nD: Deformation",
+  "C: Contusion",
+  "A: Abrasion",
+  "P: Penetration/Puncture",
+  "B: Burn",
+  "T: Tenderness",
+  "L: Laceration",
+  "S: Swelling",
+  "I: Instability",
+  "C: Crepitus",
+  "CSM\n\nC: Circulation",
+  "S: Sensory",
+  "M: Motor function"
+]
