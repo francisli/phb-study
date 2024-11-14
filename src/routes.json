@@ -25,6 +25,16 @@
     "filename": "/CholinergicSigns.json"
   },
   {
+    "title": "Closed Injury Treament",
+    "path": "/closed-injury-treatment",
+    "filename": "/ClosedInjuryTreatment.json"
+  },
+  {
+    "title": "Glasgow Coma Scale",
+    "path": "/glasgow-coma-scale",
+    "filename": "/GlasgowComaScale.json"
+  },
+  {
     "title": "Level of Consiousness Scale",
     "path": "/level-of-consciousness",
     "filename": "/LocAssessment.json"
