@@ -20,6 +20,11 @@
     "filename": "/AoAssessment.json"
   },
   {
+    "title": "Cholinergic Agent Signs & Symptoms",
+    "path": "/cholinergic-signs-symptoms",
+    "filename": "/CholinergicSigns.json"
+  },
+  {
     "title": "Level of Consiousness Scale",
     "path": "/level-of-consciousness",
     "filename": "/LocAssessment.json"
